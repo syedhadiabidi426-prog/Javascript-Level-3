@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe - 2 Player Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas for dynamic floating stars/particles -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Foreground Celebration Canvas -->
+    <canvas id="fx-canvas"></canvas>
+
+    <div class="container">
+        <header>
+            <h1 class="game-title">TIC TAC TOE</h1>
+            <p class="subtitle">3x3 ULTRA EDITION</p>
+        </header>
+
+        <!-- Futuristic Scoreboard -->
+        <div class="glass-panel scoreboard">
+            <div class="player-card active turn-x" id="px-card">
+                <span class="player-symbol symbol-x">✕</span>
+                <div>
+                    <div class="score-label">Player X</div>
+                    <div class="score-val" id="x-score">0</div>
+                </div>
+            </div>
+
+            <div class="draw-box">
+                <div class="score-label">DRAWS</div>
+                <div class="score-val" id="draw-score">0</div>
+            </div>
+
+            <div class="player-card" id="po-card">
+                <span class="player-symbol symbol-o">◯</span>
+                <div>
+                    <div class="score-label">Player O</div>
+                    <div class="score-val" id="o-score">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Game Board Glass Container -->
+        <div class="glass-panel board-container">
+            <svg class="strike-svg" id="strike-svg"></svg>
+            <div class="board" id="board"></div>
+        </div>
+
+        <!-- Game Control Action Bar -->
+        <div class="controls">
+            <button class="btn btn-primary" id="restart-btn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Next Round
+            </button>
+            <button class="btn" id="reset-scores-btn">Reset Scores</button>
+            <button class="btn btn-icon" id="sound-btn" title="Toggle Sound">
+                <svg id="sound-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Victory Modal Overlay -->
+    <div class="modal-overlay" id="win-modal">
+        <div class="modal-card">
+            <div class="modal-winner-title" id="modal-title">PLAYER X WINS!</div>
+            <div class="modal-subtitle" id="modal-subtitle">Neon streak complete.</div>
+            <button class="btn btn-primary" id="modal-restart-btn" style="width: 100%;">
+                Play Next Round
+            </button>
+        </div>
+    </div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
